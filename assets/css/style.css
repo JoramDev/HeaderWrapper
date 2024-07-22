@@ -1,0 +1,223 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.header{
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+}
+
+.nav{
+    width: 100%;
+    /* background-color: rgba(22, 22, 23, 0.8); */
+    background-color: transparent; 
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    flex-direction: row;
+    backdrop-filter: blur(5px);
+}
+
+.nav .logo img{
+    width: 80px;
+}
+
+.nav .title_and_menu__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_and_menu__container .title__Page{
+    border-bottom: 1px solid purple;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
+.title_and_menu__container .title__Page{
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.nav .title_and_menu__container .menu{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.nav .title_and_menu__container .menu li a{
+    display: inline-block;
+    color: #fff;
+    padding: 8px 10px;
+    transition: background-color .2s ease-in-out;
+    border-radius: 9px;
+}
+
+
+.nav .title_and_menu__container .menu li a:hover{
+    background-color: rgba(114, 7, 73, 0.464);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bg__container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		padding: 6em 4em 4em 4em;
+        background-color: black;
+}
+
+
+
+
+
+.bg__container.is-loading *, .bg__container.is-loading *:before, .bg__container.is-loading *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+
+
+
+#bg {
+    -moz-transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+    -ms-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+    height: 100%;
+    left: 0;
+    opacity: 0.25;
+    position: static;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+    #bg div {
+        -moz-transition: opacity 3s ease-in-out, visibility 3s;
+        -webkit-transition: opacity 3s ease-in-out, visibility 3s;
+        -ms-transition: opacity 3s ease-in-out, visibility 3s;
+        transition: opacity 3s ease-in-out, visibility 3s;
+        background-size: cover;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        width: 150%;
+    }
+
+        #bg div.visible {
+            -moz-animation: bg 45s linear infinite;
+            -webkit-animation: bg 45s linear infinite;
+            -ms-animation: bg 45s linear infinite;
+            animation: bg 45s linear infinite;
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+
+            #bg div.visible.top {
+                z-index: -1;
+            }
+
+
+
+            @media screen and (max-width: 1280px) {
+
+                #bg div.visible {
+                    -moz-animation: bg 29.25s linear infinite;
+                    -webkit-animation: bg 29.25s linear infinite;
+                    -ms-animation: bg 29.25s linear infinite;
+                    animation: bg 29.25s linear infinite;
+                }
+
+            }
+
+            @media screen and (max-width: 736px) {
+
+                #bg div.visible {
+                    -moz-animation: bg 18s linear infinite;
+                    -webkit-animation: bg 18s linear infinite;
+                    -ms-animation: bg 18s linear infinite;
+                    animation: bg 18s linear infinite;
+                }
+
+            }
+
+            #bg div:only-child {
+                -moz-animation-direction: alternate !important;
+                -webkit-animation-direction: alternate !important;
+                -ms-animation-direction: alternate !important;
+                animation-direction: alternate !important;
+            }
+
+            .bg__container.is-loading #bg {
+                opacity: 0;
+            }
+
+
+
+            @keyframes bg {
+                0% {
+                    -moz-transform: translateX(0);
+                    -webkit-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                    transform: translateX(0);
+                }
+        
+                100% {
+                    -moz-transform: translateX(-25%);
+                    -webkit-transform: translateX(-25%);
+                    -ms-transform: translateX(-25%);
+                    transform: translateX(-25%);
+                }
+            }
+
+
